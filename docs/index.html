@@ -1,12 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ShadowLiner</title>
-    <link type="text/css" rel="stylesheet" href="styles.css">
-    <script type="application/javascript" src="composeApp.js"></script>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="theme-color" content="#0b0f14">
+    <style>
+        html,body {
+          height: 100%;
+          margin: 0;
+          background: #0b0f14;      /* твой фон */
+          color: #e7eef7;           /* твой текст */
+        }
+        .loader {
+          position: fixed;
+          inset: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Arial,sans-serif;
+          font-size: 1.2rem;
+          letter-spacing: .5px;
+          opacity: .9;
+        }
+        .spinner {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          border: 3px solid rgba(231,238,247,.25);
+          border-top-color: #e7eef7;
+          animation: spin 1s linear infinite;
+          margin-right: 14px;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+    </style>
+
+    <!-- Если сайт открывается как /repo/, добавь: -->
+    <!-- <base href="/<repo>/"> -->
 </head>
 <body>
+<div id="app-loader" class="loader">
+    <div class="spinner"></div>
+    <div>Loading...</div>
+</div>
+
+<!-- Скомпилированный скрипт из productionExecutable -->
+<script type="module" src="./composeApp.js"></script>
 </body>
 </html>
